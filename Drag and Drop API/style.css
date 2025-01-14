@@ -1,0 +1,49 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* List styling */
+ul {
+    list-style: none;
+    padding: 0;
+    max-width: 400px;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+li {
+    padding: 15px 20px;
+    margin: 0;
+    border-bottom: 1px solid #ccc;
+    cursor: grab;
+    background-color: #f9f9f9;
+    transition: background-color 0.2s;
+}
+
+li:last-child {
+    border-bottom: none;
+}
+
+li:active {
+    cursor: grabbing;
+}
+
+/* Highlight drop target */
+.dragging {
+    opacity: 0.5;
+}
+
+.over {
+    background-color: #e0ffe0;
+}

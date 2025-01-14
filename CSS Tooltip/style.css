@@ -1,0 +1,126 @@
+body {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    gap: 50px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Style the heading */
+h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+/* Style the button container */
+div {
+    display: flex;
+    gap: 20px;
+}
+
+/* Button styling */
+button {
+    position: relative;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* Tooltip text */
+.tooltip {
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    white-space: nowrap;
+    transition: opacity 0.3s;
+}
+
+/* Tooltip positions */
+.tooltip.left {
+    top: 50%;
+    right: 105%;
+    transform: translateY(-50%);
+}
+
+.tooltip.top {
+    bottom: 105%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.tooltip.bottom {
+    top: 105%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.tooltip.right {
+    top: 50%;
+    left: 105%;
+    transform: translateY(-50%);
+}
+
+/* Add arrow using ::after */
+.tooltip::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+}
+
+/* Arrow for tooltip on left */
+.tooltip.left::after {
+    top: 50%;
+    left: 100%;
+    transform: translateY(-50%);
+    border-width: 5px 0 5px 5px;
+    border-color: transparent transparent transparent #333;
+}
+
+/* Arrow for tooltip on top */
+.tooltip.top::after {
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px 5px 0 5px;
+    border-color: #333 transparent transparent transparent;
+}
+
+/* Arrow for tooltip on bottom */
+.tooltip.bottom::after {
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 0 5px 5px 5px;
+    border-color: transparent transparent #333 transparent;
+}
+
+/* Arrow for tooltip on right */
+.tooltip.right::after {
+    top: 50%;
+    right: 100%;
+    transform: translateY(-50%);
+    border-width: 5px 5px 5px 0;
+    border-color: transparent #333 transparent transparent;
+}
+
+/* Show tooltip on hover */
+button:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}

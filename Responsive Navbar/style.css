@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+}
+
+.navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    position: relative;
+    margin: 0 10px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 12px;
+    transition: background-color 0.3s;
+}
+
+.nav-links a:hover {
+    background-color: #555;
+    border-radius: 4px;
+}
+
+/* Dropdown menu */
+.nav-links .dropdown {
+    display: none;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    background-color: #444;
+    list-style: none;
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.nav-links .dropdown li {
+    margin: 5px 0;
+}
+
+.nav-links .dropdown a {
+    padding: 8px 12px;
+    color: #fff;
+    white-space: nowrap;
+}
+
+.nav-links li:hover .dropdown {
+    display: block;
+}
+
+/* Hamburger menu styling */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 4px;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #333;
+        padding: 10px 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 5px 0;
+        text-align: center;
+    }
+
+    .dropdown {
+        position: static;
+        box-shadow: none;
+        background-color: transparent;
+    }
+
+    .dropdown a {
+        padding-left: 20px;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+}
